@@ -10,3 +10,6 @@ for i in str:
         res += i
 print(str)
 print(res)
+
+
+print('Ali\tRahimi Sadegh\nKerman')
