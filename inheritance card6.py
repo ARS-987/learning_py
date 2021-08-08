@@ -76,11 +76,21 @@ class Hand(Deck):
         self.name = name
         self.cards = []
 
+    def __str__(self):
+        if self.IsEmpty():
+            return 'Hand ' + self.name + ' is empty!'
+        return ' Hand ' + self.name + ' contains:\n' + Deck.__str__(self)
+
     def addCard(self , card):
         self.cards.append(card)
 
-deck = Deck()
-deck.shuffle()
+class CardGame:
+    def __init__(self):
+        self.deck = Deck()
+        self.deck.shuffle()
+
+game = CardGame()
+
 hand = Hand('ali')
-deck.Deal([hand], 5)
+game.deck.Deal([hand], 5)
 print(hand)
